@@ -1,0 +1,110 @@
+{
+  "/Users/fernandortec/Desktop/coding/nest-typeorm": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.7",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>"
+    },
+    "composeServiceName": null,
+    "servicePath": "/Users/fernandortec/Desktop/coding/nest-typeorm",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "demo-test-service",
+      "plugins": [
+        "serverless-offline"
+      ],
+      "functions": {
+        "main": {
+          "handler": "dist/src/main.handler",
+          "events": [
+            {
+              "http": {
+                "method": "ANY",
+                "path": "/"
+              }
+            },
+            {
+              "http": {
+                "method": "ANY",
+                "path": "{proxy+}"
+              }
+            }
+          ],
+          "name": "demo-test-service-dev-main"
+        }
+      },
+      "package": {
+        "exclude": [
+          "node_modules/**"
+        ],
+        "artifactsS3KeyDirname": "serverless/demo-test-service/dev/code-artifacts"
+      },
+      "provider": {
+        "name": "aws",
+        "stage": "dev",
+        "region": "us-east-1",
+        "versionFunctions": true
+      }
+    },
+    "serviceRawFile": "service: demo-test-service\nplugins:\n  - serverless-offline\n\nfunctions:\n  main:\n    handler: dist/src/main.handler\n    events:\n      - http:\n          method: ANY\n          path: /\n      - http:\n          method: ANY\n          path: '{proxy+}'\n\npackage:\n  exclude:\n    - node_modules/**",
+    "command": [
+      "remove"
+    ],
+    "options": {},
+    "error": null,
+    "params": {},
+    "machineId": "11aafcff51c6eff54791244bcf4aab28",
+    "stage": "dev",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "620a2668-24ae-4b15-a87e-78d6be26e0b3",
+    "orgName": "fernandortec",
+    "userId": "KY0ZMsvkXBKZvMDkJ2",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "fernandortec",
+    "subscription": null,
+    "userEmail": "fernandorfigueiredotec@gmail.com",
+    "serviceProviderAwsRegion": "us-east-1",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "430118844494",
+    "projectType": "traditional",
+    "versionSf": "4.4.7",
+    "serviceProviderAwsCfStackName": "demo-test-service-dev",
+    "serviceUniqueId": "arn:aws:cloudformation:us-east-1:430118844494:stack/demo-test-service-dev/aa3e4ee0-91ab-11ef-92f4-0affd6f35b43",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:430118844494:stack/demo-test-service-dev/aa3e4ee0-91ab-11ef-92f4-0affd6f35b43",
+    "serviceProviderAwsCfStackCreated": "2024-10-24T01:59:55.452Z",
+    "serviceProviderAwsCfStackUpdated": "2024-10-24T02:13:02.436Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "MainLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:430118844494:function:demo-test-service-dev-main:2",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-demo-test-service-dev-MainLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "ServiceEndpoint",
+        "OutputValue": "https://j9916xkfk5.execute-api.us-east-1.amazonaws.com/dev",
+        "Description": "URL of the service endpoint",
+        "ExportName": "sls-demo-test-service-dev-ServiceEndpoint"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "serverless-framework-deployments-us-east-1-50d299c6-fb5e",
+        "ExportName": "sls-demo-test-service-dev-ServerlessDeploymentBucketName"
+      }
+    ],
+    "integrations": {}
+  }
+}
